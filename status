@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Identifier les PID des processus gunicorn sur le port 8001
+lsof -i :8001
+

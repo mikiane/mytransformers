@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Identifier les PID des processus gunicorn sur le port 8001
+pids=$(lsof -ti tcp:8001)
+
+# Tuer ces processus
+for pid in $pids; do
+    echo "Killing process $pid"
+    kill -9 $pid
+done
+
+# Relancer le script
+sh start
+

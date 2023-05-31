@@ -1,0 +1,1 @@
+gunicorn --bind 0.0.0.0:8001 -w 4 transformers_api:app --timeout 7200 --daemon --access-logfile /home/michel/docs/access.log --error-logfile /home/michel/docs/error.log --capture-output
