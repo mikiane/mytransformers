@@ -452,7 +452,7 @@ def summarizelarge_chap(text, prefix, n=3, model="gpt-4"):
     j = 1
 
     # Summarize the text
-    while j <= n:
+    while j <= int(n):
         if j > 1:
             input_f = output_f + "_" + str(j-1) + ".csv"
 
