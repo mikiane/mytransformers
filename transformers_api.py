@@ -36,7 +36,7 @@ def sumup():
     # Summarize the text and get the filename of the summary
     filename = __lib_transformers.summarizelarge_chap(inputstring, str(email), n, model)
     # Send the summarized file to the specified email
-    __lib_transformers.mailfile(filename, email, uploaded_file.filename)
+    __lib_transformers.mailfile(filename, email, uploaded_file.filename + "model:" + str(model))
     res = [{'id':1,'request':'summarize','answer':filename}]
     response = jsonify(res)
     response.headers['Content-Type'] = 'application/json'
@@ -55,7 +55,7 @@ def transform():
     # Transform the text and get the filename of the transformed text
     filename = __lib_transformers.transform_chap(text, str(email), instruction, 1, model)
     # Send the transformed file to the specified email
-    __lib_transformers.mailfile(filename, email, str(instruction))
+    __lib_transformers.mailfile(filename, email, str(instruction) + "model:" + str(model))
     res = [{'id':1,'request':'transform','answer':filename}]
     response = jsonify(res)
     response.headers['Content-Type'] = 'application/json'
