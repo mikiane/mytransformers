@@ -406,7 +406,12 @@ def summarize(text, model='gpt-3.5-turbo'):
         limit = 12000  # Limit for text size
     else:
         limit = 6000
-    prompt = "Texte : " + text[:limit] + "\nTache : Résumer le texte en respectant le style et le sens. \nFormat : Un texte court dont le style et le sens sont conformes au texte original. \nObjectif : Obtenir un texte lisible sans entrée en matière. \nEtapes : Résumer directement le texte sans mentionner que c’est un résumé. \n Ecrire le résumé :\n"
+    prompt = "Texte : " + text[:limit] + "\nTache : Résumer le texte en respectant le style et le sens. \
+        \nFormat : Un texte court dont le style et le sens sont conformes au texte original. \
+        \nObjectif : Obtenir un résumé sans introduction particulière. \
+        \nEtapes : Ne jamais mentionner que le texte produit est un résumé. \
+        \n Le résumé : \
+        \n"
     system = "Rôle : Etre un rédacteur en français spécialisé dans le résumé d’ouvrages."
 
     # Try to make a request to the API

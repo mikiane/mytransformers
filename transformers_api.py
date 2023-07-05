@@ -13,7 +13,7 @@ import __lib_transformers
 
 
 app = Flask(__name__)  # Initialize Flask app
-CORS(app)  # Enable CORS for the Flask app
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limit the size of uploaded files to 50 MB
 
 
